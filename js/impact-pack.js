@@ -578,6 +578,9 @@ app.registerExtension({
 			node.onDrawForeground = function (ctx) {
 				const r = orig_draw?.apply?.(this, arguments);
 
+				console.log('1', model_name_widget)
+				console.log('2', model_name_widget.value)
+				console.log('3', model_name_widget.value.startsWith('segm/') || model_name_widget.value.includes('-seg'))
 				let is_seg = model_name_widget.value.startsWith('segm/') || model_name_widget.value.includes('-seg');
 				if(!is_seg) {
 					var slot_pos = new Float32Array(2);
