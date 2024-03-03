@@ -574,6 +574,8 @@ app.registerExtension({
 
 		if(node.comfyClass == "UltralyticsDetectorProvider") {
 			let model_name_widget = node.widgets.find((w) => w.name === "model_name");
+			console.log('node', node)
+			console.log('node.widgets', node.widgets)
 			let orig_draw = node.onDrawForeground;
 			node.onDrawForeground = function (ctx) {
 				const r = orig_draw?.apply?.(this, arguments);
